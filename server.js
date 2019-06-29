@@ -26,19 +26,20 @@ app.get("/scrape", (req, res) => {
       const $ = cheerio.load(response.data);
       $(".block").each((i, element) => {
         let result = [];
-        result.title = $(this)
+        result.title = $(element)
           .find("h2").find("a").text();
-        result.link = $(this)
+        result.link = $(element)
           .find("a").attr("href");
-        result.photo = $(this)
+        result.photo = $(element)
           .find("div").find("a").attr("href");
-        db.Article.create(result)
-          .then((dbArticle) => {
-            console.log(dbArticle);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+          console.log(result);
+        // db.Article.create(result)
+        //   .then((dbArticle) => {
+        //     console.log(dbArticle);
+        //   })
+          // .catch((err) => {
+          //   console.log(err);
+          // });
       });
     });
   res.send("Scrape Complete");
