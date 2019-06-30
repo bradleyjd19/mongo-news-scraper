@@ -15,10 +15,9 @@ const ArticleSchema = new Schema({
     required: true
   },
 
-  // photo: {
-  //   type: String,
-  //   required: true
-  // },
+  photo: {
+    type: String
+  },
 
   saved: {
     type: Boolean,

@@ -1,4 +1,9 @@
-$.getJSON("/articles", (data) {
+$(document).on("click", "#hamburger", function(event) {
+  event.preventDefault();
+  $(".navbar-menu").toggleClass("is-active");
+})
+
+$.getJSON("/articles", (data) =>{
   for (let i = 0; i < data.length; i++) {
     $("#").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
   }
@@ -34,13 +39,14 @@ $(document).on("click", "#", () => {
     url: "/articles" + thisId,
     data: {
       title: $("#").val(),
-      body: $("#").val();
+      body: $("#").val()
     }
   })
     .then((data) => {
       console.log(data);
       $("#").empty();
     });
+
   $("#").val("");
   $("#").val("");
 })

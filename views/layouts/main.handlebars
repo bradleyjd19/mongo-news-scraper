@@ -8,67 +8,86 @@
   <!-- Bulma -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
   <!-- Favicon -->
   <link rel="icon" type="favicon/png" href="https://i1.sndcdn.com/avatars-000331036304-4w4cvs-t500x500.jpg">
-  <title>Bro</title>
+  <title>Brobible Scraper</title>
 </head>
 
 <body>
 
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav id="navbar" class="navbar is-warning" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <img src="https://i1.sndcdn.com/avatars-000331036304-4w4cvs-t500x500.jpg" alt="Brobible Logo">
+        <img src="./images/scraper-logo.png" alt="Brobible Logo">
       </a>
-      <div class="breadcrumb is-right" aria-label="breadcrumbs">
-        <ul>
-          <li>
-            <a href="/">
-              <span class="icon is-small">
-                <i class="fas fa-home" aria-hidden="true"></i>
-              </span>
-              <span> Home</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="icon is-small">
-                <i class="fas fa-save" aria-hidden="true"></i>
-              </span>
-              <span> Saved Articles</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
+
+      <a id="hamburger" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarLinks">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarLinks" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">
+          <span class="icon is-small">
+            <i class="fas fa-home" aria-hidden="true"></i>
+          </span>
+          <span id="linkName">Home</span>
+        </a>
+
+        <a class="navbar-item" href="/saved">
+          <span class="icon is-small">
+            <i class="fas fa-save" aria-hidden="true"></i>
+          </span>
+          <span id="linkName">Saved Articles</span>
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a id="scrapeButton" class="button is-success">
               <span class="icon is-small">
                 <i class="fas fa-newspaper" aria-hidden="true"></i>
               </span>
               <span> Scrape Articles</span>
             </a>
-          </li>
-          <li>
-            <a href="#">
+            <a id="clearButton" class="button is-danger">
               <span class="icon is-small">
                 <i class="fas fa-trash-alt" aria-hidden="true"></i>
               </span>
               <span> Clear Articles</span>
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
 
+  <div class="columns has-text-centered">
+    <div class="column"></div>
+    <div class="column is-half">
+      <div id="headerBlock" class="has-background-warning">
+        <h1 id="header"><u>b</u>ro<u>b</u>ible <u>scraper</u></h1>
+        <h3 id="tagline">where bros read what matters</h3>
+      </div>
+    </div>
+    <div class="column"></div>
+  </div>
+
   {{{body}}}
 
   <footer>
-    <div id="footer-icons" class="columns is-mobile has-text-centered">
+    {{!-- <div id="footer-icons" class="columns is-mobile has-text-centered">
 
       <a href="/homepage" id="homepageFooter">
         <div class="column is-one-quarter">
@@ -119,7 +138,7 @@
         </div>
       </a>
 
-    </div>
+    </div> --}}
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -128,7 +147,7 @@
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <script src="./js/javascript.js"></script>
+  <script src="./app.js"></script>
 
 
 </body>
