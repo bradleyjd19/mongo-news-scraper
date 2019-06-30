@@ -15,15 +15,21 @@ const ArticleSchema = new Schema({
     required: true
   },
 
-  photo: {
-    type: String,
-    required: true
+  // photo: {
+  //   type: String,
+  //   required: true
+  // },
+
+  saved: {
+    type: Boolean,
+    default: false
   },
 
   note: {
     type: Schema.Types.ObjectId,
     ref: "Note"
   }
+
 });
 
 const Article = mongoose.model("Article", ArticleSchema);
