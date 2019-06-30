@@ -18,8 +18,10 @@ html {
   margin-right: 20px;
 }
 
-#headerBlock {
-  
+.card-equal-height {
+  display: flex;
+  flex-direction: column;
+  float: left;
 }
 
 #header,

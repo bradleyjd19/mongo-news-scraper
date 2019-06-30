@@ -1,64 +1,30 @@
+    {{#each article}}
 <section class="section cards">
   <div class="container">
-    <div class="columns is-multiline">
-      {{!-- {{#each Article}} --}}
-      <div class="column">
-        <div class="card">
+    <div class="columns">
+      <div class="column"></div>
+      <div class="column is-two-fifths">
+        <div class="card card-equal-height">
           <div class="card-image">
-            <figure class="image is-128x128">
-              <img src="./images/background.jpg">
+            <figure class="image is-4by3">
+              <img src="{{this.photo}}">
             </figure>
           </div>
-          <div class="content">
-            Testing
-            <br>
-            <a href="Test">Read Story</a>
+          <div class="card-content">
+            <p class="title has-text-centered">{{this.title}}</p>
+          </div>
+          <div class="card-footer">
+            <p class="card-footer-item">
+              <span><button class="button is-link is-outlined"><a href="{{this.link}}">Read Story</a></button></span>
+            </p>
+            <p class="card-footer-item">
+              <span><button id="saveArticle" data-id="{{this._id}}" class="button is-link is-outlined">Save Article</a></span>
+            </p>
           </div>
         </div>
       </div>
-      <div class="column">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-128x128">
-              <img src="./images/background.jpg">
-            </figure>
-          </div>
-          <div class="content">
-            Testing
-            <br>
-            <a href="Test">Read Story</a>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-128x128">
-              <img src="./images/background.jpg">
-            </figure>
-          </div>
-          <div class="content">
-            Testing
-            <br>
-            <a href="Test">Read Story</a>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-128x128">
-              <img src="./images/background.jpg">
-            </figure>
-          </div>
-          <div class="content">
-            Testing
-            <br>
-            <a href="Test">Read Story</a>
-          </div>
-        </div>
-      </div>
-      {{!-- {{/each}} --}}
+      <div class="column"></div>
     </div>
   </div>
 </section>
+    {{/each}}

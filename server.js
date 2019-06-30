@@ -56,7 +56,8 @@ app.get("/scrape", function(req, res) {
         .parent("div")
         .children(".post-photo")
         .children("a")
-        .attr("href");
+        .children("img")
+        .attr("src");
 
       db.Article.create(result)
         .then(function(dbArticle) {
@@ -66,7 +67,6 @@ app.get("/scrape", function(req, res) {
           console.log(err);
         });
     });
-
     res.send("Scrape Complete");
   });
 });
