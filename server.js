@@ -34,17 +34,22 @@ app.get("/", function (req, res) {
 });
 
 app.get("/saved", function (req, res) {
-  db.Article.find({ saved: true })
-    .populate("notes")
-    .then(function (error, data) {
-      if (error) {
-        console.error(error);
-      } else {
-        let hbsObject = {
-          article: data
-        };
-        res.render("index", hbsObject);
-      }
+  db.Article.find({ saved: true }, (error, data) => {
+    if (error) {
+      console.error(error);
+    } else {
+      let hbsObject = {
+        article: data
+      };
+      res.render("index", hbsObject);
+    }
+  });
+});
+
+app.post("/saved/:id", function (req, res) {
+  db.Article.findOneAndUpdate({ _id: req.params.id }, { $set: { saved: true } })
+    .then(function (dbArticle) {
+      res.json(dbArticle);
     });
 });
 
